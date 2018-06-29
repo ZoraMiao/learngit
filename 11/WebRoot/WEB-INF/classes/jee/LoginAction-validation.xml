@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="username">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="UserFail" />
+		</field-validator>
+	</field>
+	<field name="password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="PassFail" />
+		</field-validator>
+	</field>
+	<field name="age">
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">150</param>
+			<message key="AgeFail" />
+		</field-validator>
+	</field>
+</validators>

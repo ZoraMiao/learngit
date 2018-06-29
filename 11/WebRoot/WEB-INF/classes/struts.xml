@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="msg" />
+
+	<package name="jee" extends="struts-default">
+		<action name="Calculate" class="jee.Calculate">
+			<result name="success">/res.jsp</result>
+			<result name="fail">/input.jsp</result>
+		</action>
+		<action name="RegisterPrepareAction" class="jee.RegisterPrepareAction">
+			<result>/Regist.jsp</result>
+		</action>
+		<action name="RegistAction" class="jee.RegistAction">
+			<result>/Login.jsp</result>
+			<result name="fail">/Regist.jsp</result>
+		</action>
+		<action name="CheckLoginByObj" class="jee.CheckLoginByObj">
+			<result name="success">/stu_suc.jsp</result>
+			<result name="fail">/stu_fail.jsp</result>
+			<result name="input">/Login.jsp</result>
+		</action>
+		<action name="LoginAction" class="jee.LoginAction">
+			<result>/Success.jsp</result>
+			<result name="input">/Login.jsp</result>
+		</action>
+		<action name="FilesUpload" class="jee.FilesUpload">
+			<result>/upload_res.jsp</result>
+		</action>
+		<action name="fileDown" class="jee.FileDown">
+			<result type="stream">
+				<param name="inputName">txtStream</param>
+			</result>
+		</action>
+		<action name="fileDown2" class="jee.FileDown">
+			<result type="stream">
+				<param name="inputName">fileStream</param>
+			</result>
+		</action>
+		<action name="stu_list" class="jee.StuAction">
+			<result>/stu_list.jsp</result>
+		</action>
+		<action name="stu_edit" class="jee.StuAction" method="edit">
+			<result>/stu_edit.jsp</result>
+		</action>
+		<action name="stu_save" class="jee.StuAction" method="save">
+			<result type="redirect">/stu_save_suc.jsp</result>
+			<result name="error" type="redirect">/stu_save_error.jsp</result>
+		</action>
+		<action name="stu_update" class="jee.StuAction" method="update">
+			<result type="redirect">/stu_update_suc.jsp</result>
+			<result name="error" type="redirect">/stu_update_error.jsp</result>
+		</action>
+		<action name="stu_del" class="jee.StuAction" method="del">
+			<result type="redirect">/stu_del_suc.jsp</result>
+			<result name="error" type="redirect">/stu_del_error.jsp</result>
+		</action>
+	</package>
+	<include file="test/sec/sec.xml" />
+</struts>   

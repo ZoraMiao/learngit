@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="sec" extends="struts-default" namespace="/sec">
+		<interceptors>
+			<interceptor name="postfix" class="test.sec.Postfix" />
+			<interceptor-stack name="rStack">
+				<interceptor-ref name="postfix" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="rStack" />
+		<action name="MyAction" class="jee.MyAction">
+			<result>/Success.jsp</result>
+			<result name="reput">/interceptfalse.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="rStack"/>
+		</action>
+	</package>
+</struts>   
