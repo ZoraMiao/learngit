@@ -13,5 +13,5 @@ git remote add origin git@github.com:***/vue2.1-sell.git 或者 git remote add o
 6. 获取远程库与本地同步（远程仓库不为空需要这一步）
 git pull --rebase origin master
 7. 把本地内容推送到远程库 使用 git-push
-git push -u origin master
+git push -u origin master<br>
 [相关文章](https://blog.csdn.net/chenzhijie101/article/details/79512336)
